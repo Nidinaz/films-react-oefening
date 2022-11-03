@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
+  const Filmlist = [
+    {
+      name: "Captain Clegg",
+      production: "Hammer",
+    },
+
+    {
+      name: "Vamprie Hunter",
+      production: "Hammer",
+    },
+
+    {
+      name: "Dr. Jekyll and Sister Hyde",
+      production: "Hammer",
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="films">
+      <Films film={Filmlist[0]}></Films>
+      <Films film={Filmlist[1]}></Films>
+      <Films film={Filmlist[2]}></Films>
     </div>
   );
 }
+
+const Films = (props) => {
+  console.log(props);
+  return (
+    <div className="Filmobject">
+      <p>{props.film.name}</p>
+      <p>{props.film.production}</p>
+    </div>
+  );
+};
 
 export default App;
